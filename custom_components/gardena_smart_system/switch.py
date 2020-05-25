@@ -302,7 +302,7 @@ class GardenaSmartIrrigationControl(SwitchEntity):
             _LOGGER.debug("Valve has activity %s", activity)
             if activity == "OFF":
                 self._state = False
-            elif activity in ["FOREVER_ON", "TIME_LIMITED_ON", "SCHEDULED_ON"]:
+            elif activity in ["FOREVER_ON", "TIME_LIMITED_ON", "SCHEDULED_ON", "MANUAL_WATERING"]:
                 self._state = True
             else:
                 _LOGGER.debug("Valve has none activity")
