@@ -1,5 +1,5 @@
 {
-  "name": "Gardena Smart System",
+  "name": "Gardena Smart System WT",
   "domains": ["sensor", "switch", "vacuum"],
   "render_readme": true,
   "homeassistant": "0.110.0"
