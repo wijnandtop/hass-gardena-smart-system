@@ -299,13 +299,13 @@ class GardenaSmartIrrigationControl(SwitchEntity):
             _LOGGER.debug("Getting Valve state")
             activity = self._valve["activity"]
             self._error_message = ""
-            _LOGGER.debug("Valve has activity %s", activity)
-            if activity == "OFF":
+            _LOGGER.debug("Valve %s has activity %s", self.name(), activity)
+            if activity == "CLOSED":
                 self._state = False
-            elif activity in ["FOREVER_ON", "TIME_LIMITED_ON", "SCHEDULED_ON", "MANUAL_WATERING"]:
+            elif activity in ["MANUAL_WATERING", "SCHEDULED_WATERING"]:
                 self._state = True
             else:
-                _LOGGER.debug("Valve has none activity")
+                _LOGGER.info("Valve %s has none activity", self.name())
 
     @property
     def name(self):
